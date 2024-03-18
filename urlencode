@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ $# -gt 0 ]; then
+  echo "Please use urlencode without the password"
+  echo "Usage:    urlencode"
+  exit 1
+fi
+echo "Please enter the password to encode:"
+read eingabe
+ENCODED_STRING="$(echo -n "$eingabe" | jq -sRr @uri)"
+clear
+echo "Your URL encoded password is:"
+echo
+echo "${ENCODED_STRING}"
+echo

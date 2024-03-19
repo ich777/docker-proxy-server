@@ -39,13 +39,13 @@ The container uses [dumbproxy](https://github.com/SenseUnit/dumbproxy) and [sock
 ## Run example
 ```
 docker run --name Proxy-Server -d \
-  -p 8118:8118 \
-  --env 'HTTP_PROXY=true' \
-  --env 'SOCKS5_PROXY=true' \
-  --env 'UID=99' \
+	-p 8118:8118 \
+	--env 'HTTP_PROXY=true' \
+	--env 'SOCKS5_PROXY=true' \
+	--env 'UID=99' \
 	--env 'GID=100' \
-  --env 'UMASK=0000' \
-  --restart=unless-stopped\
+	--env 'UMASK=0000' \
+	--restart=unless-stopped\
 	ich777/proxy-server
 ```
 

@@ -47,7 +47,6 @@ if [ "${SOCKS5_PROXY}" == "true" ]; then
   fi
   SOCKS5_PROXY_OPTIONS="-p ${SOCKS5_PROXY_PORT}${SOCKS5_AUTH:+ }${SOCKS5_AUTH}${SOCKS5_PROXY_EXTRA:+ }${SOCKS5_PROXY_EXTRA}"
   echo "---Starting SOCKS5 proxy${SOCKS5_AUTH:+ with authentication enabled}---"
-  /opt/scripts/
   /usr/bin/socks5 ${SOCKS5_PROXY_OPTIONS} &
   unset SOCKS5_PROXY_USER
   unset SOCKS5_PROXY_PWD

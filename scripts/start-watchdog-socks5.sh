@@ -1,7 +1,6 @@
 #!/bin/bash
-sleep 5
-
 killpid="$(pidof socks5)"
+
 while true
 do
 	tail --pid=$killpid -f /dev/null

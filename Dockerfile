@@ -29,7 +29,7 @@ LABEL org.opencontainers.image.authors="admin@minenet.at"
 LABEL org.opencontainers.image.source="https://github.com/ich777/docker-proxy-server"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends jq && \
+	apt-get -y install --no-install-recommends jq netcat-traditional && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV HTTP_PROXY="true"

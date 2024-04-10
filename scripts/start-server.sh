@@ -22,6 +22,7 @@ if [ "${HTTP_PROXY}" == "true" ]; then
   unset HTTP_PROXY_PWD
   unset HTTP_AUTH
   unset HTTP_PROXY_OPTIONS
+  /opt/scripts/start-watchdog-proxy.sh &
 else
   echo "---http/https proxy disabled---"
 fi
@@ -46,11 +47,13 @@ if [ "${SOCKS5_PROXY}" == "true" ]; then
   fi
   SOCKS5_PROXY_OPTIONS="-p ${SOCKS5_PROXY_PORT}${SOCKS5_AUTH:+ }${SOCKS5_AUTH}${SOCKS5_PROXY_EXTRA:+ }${SOCKS5_PROXY_EXTRA}"
   echo "---Starting SOCKS5 proxy${SOCKS5_AUTH:+ with authentication enabled}---"
+  /opt/scripts/
   /usr/bin/socks5 ${SOCKS5_PROXY_OPTIONS} &
   unset SOCKS5_PROXY_USER
   unset SOCKS5_PROXY_PWD
   unset SOCKS5_AUTH
   unset SOCKS5_PROXY_OPTIONS
+  /opt/scripts/start-watchdog-socks5.sh &
 else
   echo "---SOCKS5 proxy disabled---"
 fi

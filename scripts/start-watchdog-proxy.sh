@@ -1,5 +1,4 @@
 #!/bin/bash
-sleep 5
 killpid="$(pidof proxy)"
 
 while true

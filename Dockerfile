@@ -8,6 +8,7 @@ RUN apk update &&\
   git clone https://github.com/ich777/socks5 /tmp/socks5
 
 RUN cd /tmp/dumbproxy/ && \
+  git checkout v1.17.0 && \
   go get && \
   go build
 

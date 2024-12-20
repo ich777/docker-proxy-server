@@ -8,7 +8,8 @@ RUN apk update &&\
   git clone https://github.com/ich777/socks5 /tmp/socks5
 
 RUN cd /tmp/dumbproxy/ && \
-  sed -i 's|Basic realm="dumbproxy"|Basic realm="Please authenticate"|' /tmp/dumbproxy/auth/common.go && \
+  git checkout v1.7.0 && \
+  sed -i 's|Basic realm="dumbproxy"|Basic realm="Please authenticate"|' /tmp/dumbproxy/auth.go && \
   go get && \
   go build
 
